@@ -1,6 +1,6 @@
 # API
 
-A personal statistics API.
+A (very much work in progress) personal statistics API.
 
 ## Routes
 
@@ -47,11 +47,21 @@ A personal statistics API.
     }
   ]
 }
-
 ```
+
+### `/v1/fitness`
+
+### `/v1/music`
+
+### `/v1/code`
+
+### `/v1/travel`
 
 ## Inspiration
 
 * [Anand Sharma](http://aprilzero.com/) (and his new company [Gyroscope](https://gyrosco.pe))
 * [Naveen Salvadurai](http://api.naveen.com/) ([blog post](http://x.naveen.com/post/51808692792/a-personal-api))
 * [Chris Hopkin](https://github.com/hopkinschris/dashboard) ([blog post](http://blog.hopkins.io/2013/06/08/personal-api/))
+
+## License
+Available for use under the MIT license: [http://bryan.mit-license.org](http://bryan.mit-license.org)

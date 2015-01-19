@@ -4,10 +4,6 @@ var oauthSignature = require('oauth-signature')
   , fs             = require('fs')
   , _              = require('underscore');
 
-// TODO: Have options passed into a constructor rather than a function argument
-// TODO: Get activity measurements (e.g. step counts) as well
-// TODO: Think about pagination
-
 module.exports = function (options, callback) {
   fetchBodyMeasurements(options, function (error, data) {
     if (error) {
@@ -35,17 +31,25 @@ var transformBodyMeasurementsResponse = function (response) {
 
     var convertBodyMeasurementValue = function (measurement) {
       var value = (function () {
-        var typesWithKilogramUnits = [1, 5, 8];
+        var metersToFeet = function (meters) {
+          return meters * 3.28084;
+        };
 
         var kilogramsToPounds = function (kilograms) {
           return kilograms * 2.20462262;
         };
 
-        if (_(typesWithKilogramUnits).contains(measurement.type)) {
-          return kilogramsToPounds(measurement.value);
-        }
-        else {
-          return measurement.value;
+        switch (measurement.type) {
+          // Meters
+          case 4:
+            return metersToFeet(measurement.value);
+          // Kilograms
+          case 1:
+          case 5:
+          case 8:
+            return kilogramsToPounds(measurement.value);
+          default:
+            return measurement.value;
         }
       }()); 
 
