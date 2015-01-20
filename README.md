@@ -2,6 +2,20 @@
 
 A (very much work in progress) personal statistics API.
 
+## Integrations
+
+*  Withings
+
+#### Configuration
+
+##### Withings
+
+* `WITHINGS_CONSUMER_KEY`
+* `WITHINGS_CONSUMER_SECRET`
+* `WITHINGS_TOKEN`
+* `WITHINGS_TOKEN_SECRET`
+* `WITHINGS_USER_ID`
+
 ## Routes
 
 ### `/v1/health`
