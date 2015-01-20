@@ -8,6 +8,8 @@ A (very much work in progress) personal statistics API.
 
 #### Configuration
 
+For each service below, the variables listed need to be added as either environment variables (for a production environment e.g. Heroku) or included in a `credentials.json` file (for local development).
+
 ##### Withings
 
 * `WITHINGS_CONSUMER_KEY`
